@@ -1,0 +1,39 @@
+.intro_container {
+  margin: 20px;
+}
+
+.name_title {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.job_title {
+  margin-bottom: 20px;
+}
+
+.section_button {
+  width: 300px;
+  margin-bottom: 10px;
+  border: none;
+  display: flex;
+  align-items: center;
+}
+
+.section_button::before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 5px;
+  background-color: #7dcd85;
+  margin: 10px;
+  transition: 0.5s;
+}
+
+.section_button:hover::before {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 5px;
+  background-color: #7dcd85;
+  margin: 10px;
+}

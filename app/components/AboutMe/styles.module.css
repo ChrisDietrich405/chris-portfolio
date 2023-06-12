@@ -1,0 +1,14 @@
+.title {
+    margin: 30px 0 30px 0;
+     
+}
+
+.image {
+    display: flex;
+    margin: 0 auto;
+    border-radius: 4px; 
+}
+
+.paragraph {
+    margin: 30px 0 30px 0; 
+}
