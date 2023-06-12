@@ -43,31 +43,66 @@ const Skills = () => {
     spacing: 8,
   };
 
+  const changeBackground = () => {
+    const elementItem = 16;
+    for (let i = 0; i < elementItem; i++) {
+      const element = document.getElementsByClassName(styles.hover)[
+        i
+      ] as HTMLElement;
+
+      if (element) {
+        element.style.backgroundColor = "yellow";
+      }
+    }
+  };
+
   return (
     <>
       <Container sx={{ mt: 2 }}>
         <h2 className={styles.title}>Skills</h2>
+
         <Grid container spacing={4} className={styles.grid_container}>
-          <Grid item xs={12} md={3} className={styles.individual_grid}>
-            <h4>Languages</h4>
-            {/* <Item elevation={3}> */}
-            <div className={styles.credentials}>
-              <IoLogoJavascript />
-              <p>Javascript</p>
+          <Grid
+            onMouseOver={changeBackground}
+            item
+            xs={12}
+            md={3}
+            className={`${styles.individual_grid} ${styles.hover}`}
+
+  
+          >
+            <h4 className={styles.hover}>Languages</h4>
+
+            <div className={`${styles.credentials} ${styles.hover}`}>
+              <IoLogoJavascript
+                className={`${styles.individual_icon} ${styles.hover}`}
+              />
+              <p className={`${styles.individual_icon} ${styles.hover}`}>
+                Javascript
+              </p>
             </div>
-            <div className={styles.credentials}>
-              <SiTypescript />
-              <p>Typescript</p>
+            <div className={`${styles.credentials} ${styles.hover}`}>
+              <SiTypescript
+                className={`${styles.individual_icon} ${styles.hover}`}
+              />
+              <p className={`${styles.individual_icon} ${styles.hover}`}>
+                Typescript
+              </p>
             </div>
-            <div className={styles.credentials}>
-              <FaHtml5 color="#e44d26" />
-              <p>HTML</p>
+            <div className={`${styles.credentials} ${styles.hover}`}>
+              <FaHtml5
+                className={`${styles.individual_icon} ${styles.hover}`}
+              />
+              <p className={`${styles.individual_icon} ${styles.hover}`}>
+                HTML
+              </p>
             </div>
-            <div className={styles.credentials}>
-              <FaCss3Alt color="#264de4" />
-              <p>CSS</p>
+            <div className={`${styles.credentials} ${styles.hover}`}>
+              <FaCss3Alt
+                className={`${styles.individual_icon} ${styles.hover}`}
+              />
+              <p className={`${styles.individual_icon} ${styles.hover}`}>CSS</p>
             </div>
-            {/* </Item> */}
           </Grid>
           <Grid item xs={12} md={4} className={styles.individual_grid}>
             <h4>Frameworks</h4>
@@ -91,7 +126,7 @@ const Skills = () => {
           </Grid>
 
           <Grid item xs={12} md={3} className={styles.individual_grid}>
-            <h4>Other Stuff</h4>
+            <h4>Dev Tools</h4>
 
             <div className={styles.credentials}>
               <FaGithubSquare color="#000000" />
