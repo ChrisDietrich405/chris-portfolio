@@ -66,7 +66,7 @@ const Contact = () => {
           </div>
         </div>
         <div className={styles.message_container}>
-          <div>
+          <div className={styles.email_container}>
             <label
               htmlFor="exampleFormControlInput1"
               className={styles.form_label}
@@ -80,21 +80,21 @@ const Contact = () => {
               placeholder="name@example.com"
             />
           </div>
-          <div className="mb-3">
+          <div className={styles.message}>
             <label
               htmlFor="exampleFormControlTextarea1"
-              className={styles.form_label}
+          
             >
               Message
             </label>
             {/* <form ref={form} onSubmit={sendEmail}> */}
-            <form>
+            <form className={styles.message_submit_container}>
               <textarea
-                id="exampleFormControlTextarea1"
-                rows="3"
+                id="exampleFormControlTextarea1"             
                 placeholder="Add message here"
+                className={styles.textarea}
               ></textarea>
-              <button>SUBMIT</button>
+              <button className={styles.submit_btn}>SUBMIT</button>
               {/* <ToastContainer /> */}
             </form>
           </div>

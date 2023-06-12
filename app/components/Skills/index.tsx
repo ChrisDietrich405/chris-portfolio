@@ -1,5 +1,7 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
+import { css } from "@mui/system";
+
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
@@ -32,6 +34,8 @@ import styles from "./styles.module.css";
 //   } from "react-icons/all";
 
 const Skills = () => {
+  const [color, setColor] = useState("");
+
   const Item = styled(Paper)(() => ({
     backgroundColor: "#98d6a9",
     padding: 8,
@@ -43,17 +47,16 @@ const Skills = () => {
     spacing: 8,
   };
 
-  const changeBackground = () => {
-    const elementItem = 16;
-    for (let i = 0; i < elementItem; i++) {
-      const element = document.getElementsByClassName(styles.hover)[
-        i
-      ] as HTMLElement;
+  const changeColor = () => {
+    setColor("#15223f");
+  };
 
-      if (element) {
-        element.style.backgroundColor = "yellow";
-      }
-    }
+  const changeColorFrameworks = () => {
+    setColor("#15223f");
+  };
+
+  const returnColor = () => {
+    setColor("#0f182c");
   };
 
   return (
@@ -63,91 +66,186 @@ const Skills = () => {
 
         <Grid container spacing={4} className={styles.grid_container}>
           <Grid
-            onMouseOver={changeBackground}
+            onMouseOver={changeColor}
+            onMouseLeave={returnColor}
+            style={{
+              backgroundColor: color,
+              transition: "0.5s",
+              borderRadius: "14px",
+            }}
             item
             xs={12}
             md={3}
-            className={`${styles.individual_grid} ${styles.hover}`}
-
-  
+            className={`${styles.individual_grid}`}
+            id="languages-card"
           >
-            <h4 className={styles.hover}>Languages</h4>
+            <h4
+              className={`${styles.hover} ${styles.cover}`}
+              onMouseOver={changeColor}
+              style={{ backgroundColor: color, transition: "0.5s" }}
+            >
+              Languages
+            </h4>
 
-            <div className={`${styles.credentials} ${styles.hover}`}>
+            <div
+              className={`${styles.credentials} ${styles.cover}`}
+              onMouseOver={changeColor}
+              style={{ backgroundColor: color, transition: "0.5s" }}
+            >
               <IoLogoJavascript
-                className={`${styles.individual_icon} ${styles.hover}`}
+                onMouseOver={changeColor}
+                style={{ backgroundColor: color, transition: "0.5s" }}
+                className={`${styles.individual_icon} ${styles.cover}`}
               />
-              <p className={`${styles.individual_icon} ${styles.hover}`}>
+              <p
+                className={`${styles.individual_icon} ${styles.cover}`}
+                onMouseOver={changeColor}
+                style={{ backgroundColor: color, transition: "0.5s" }}
+              >
                 Javascript
               </p>
             </div>
-            <div className={`${styles.credentials} ${styles.hover}`}>
+            <div
+              className={`${styles.credentials} ${styles.cover}`}
+              onMouseOver={changeColor}
+              style={{ backgroundColor: color, transition: "0.5s" }}
+            >
               <SiTypescript
-                className={`${styles.individual_icon} ${styles.hover}`}
+                onMouseOver={changeColor}
+                style={{ backgroundColor: color, transition: "0.5s" }}
+                className={`${styles.individual_icon} ${styles.cover}`}
               />
-              <p className={`${styles.individual_icon} ${styles.hover}`}>
+              <p
+                className={`${styles.individual_icon} ${styles.cover}`}
+                onMouseOver={changeColor}
+                style={{ backgroundColor: color, transition: "0.5s" }}
+              >
                 Typescript
               </p>
             </div>
-            <div className={`${styles.credentials} ${styles.hover}`}>
+            <div
+              className={`${styles.credentials} ${styles.cover}`}
+              onMouseOver={changeColor}
+              style={{ backgroundColor: color, transition: "0.5s" }}
+            >
               <FaHtml5
-                className={`${styles.individual_icon} ${styles.hover}`}
+                onMouseOver={changeColor}
+                style={{ backgroundColor: color, transition: "0.5s" }}
+                className={`${styles.individual_icon} ${styles.cover}`}
               />
-              <p className={`${styles.individual_icon} ${styles.hover}`}>
+              <p
+                className={`${styles.individual_icon} ${styles.cover}`}
+                onMouseOver={changeColor}
+                style={{ backgroundColor: color, transition: "0.5s" }}
+              >
                 HTML
               </p>
             </div>
-            <div className={`${styles.credentials} ${styles.hover}`}>
+
+            <div
+              className={`${styles.credentials} ${styles.cover}`}
+              onMouseOver={changeColor}
+              style={{ backgroundColor: color, transition: "0.5s" }}
+            >
               <FaCss3Alt
-                className={`${styles.individual_icon} ${styles.hover}`}
+                onMouseOver={changeColor}
+                style={{ backgroundColor: color, transition: "0.5s" }}
+                className={`${styles.individual_icon} ${styles.cover}`}
               />
-              <p className={`${styles.individual_icon} ${styles.hover}`}>CSS</p>
-            </div>
-          </Grid>
-          <Grid item xs={12} md={4} className={styles.individual_grid}>
-            <h4>Frameworks</h4>
-
-            <div className={styles.credentials}>
-              <FaReact color="#61dafb" />
-              <p>React</p>
-            </div>
-            <div className={styles.credentials}>
-              <FaBootstrap color="#080135" />
-              <p>Bootstrap</p>
-            </div>
-            <div className={styles.credentials}>
-              <FaHtml5 color="#e44d26" />
-              <p>HTML</p>
-            </div>
-            <div className={styles.credentials}>
-              <FaCss3Alt color="#264de4" />
-              <p>CSS</p>
-            </div>
-          </Grid>
-
-          <Grid item xs={12} md={3} className={styles.individual_grid}>
-            <h4>Dev Tools</h4>
-
-            <div className={styles.credentials}>
-              <FaGithubSquare color="#000000" />
-              <p>Github</p>
-            </div>
-
-            <div className={styles.credentials}>
-              <SiTypescript />
-              <p>Typescript</p>
-            </div>
-            <div className={styles.credentials}>
-              <FaHtml5 color="#e44d26" />
-              <p>HTML</p>
-            </div>
-            <div className={styles.credentials}>
-              <FaCss3Alt color="#264de4" />
-              <p>CSS</p>
+              <p
+                className={`${styles.individual_icon} ${styles.cover}`}
+                onMouseOver={changeColor}
+                style={{ backgroundColor: color, transition: "0.5s" }}
+              >
+                CSS
+              </p>
             </div>
           </Grid>
         </Grid>
       </Container>
+      <Grid container>
+        <Grid
+          style={{
+            backgroundColor: color,
+            transition: "0.5s",
+            borderRadius: "14px",
+          }}
+          item
+          xs={12}
+          md={3}
+          className={`${styles.individual_grid}`}
+          id="languages-card"
+        >
+          <h4
+            className={`${styles.hover} ${styles.cover}`}
+            style={{ backgroundColor: color, transition: "0.5s" }}
+          >
+            Languages
+          </h4>
+
+          <div
+            className={`${styles.credentials} ${styles.cover}`}
+            style={{ backgroundColor: color, transition: "0.5s" }}
+          >
+            <IoLogoJavascript
+              style={{ backgroundColor: color, transition: "0.5s" }}
+              className={`${styles.individual_icon} ${styles.cover}`}
+            />
+            <p
+              className={`${styles.individual_icon} ${styles.cover}`}
+              style={{ backgroundColor: color, transition: "0.5s" }}
+            >
+              Javascript
+            </p>
+          </div>
+          <div
+            className={`${styles.credentials} ${styles.cover}`}
+            style={{ backgroundColor: color, transition: "0.5s" }}
+          >
+            <SiTypescript
+              style={{ backgroundColor: color, transition: "0.5s" }}
+              className={`${styles.individual_icon} ${styles.cover}`}
+            />
+            <p
+              className={`${styles.individual_icon} ${styles.cover}`}
+              style={{ backgroundColor: color, transition: "0.5s" }}
+            >
+              Typescript
+            </p>
+          </div>
+          <div
+            className={`${styles.credentials} ${styles.cover}`}
+            style={{ backgroundColor: color, transition: "0.5s" }}
+          >
+            <FaHtml5
+              style={{ backgroundColor: color, transition: "0.5s" }}
+              className={`${styles.individual_icon} ${styles.cover}`}
+            />
+            <p
+              className={`${styles.individual_icon} ${styles.cover}`}
+              style={{ backgroundColor: color, transition: "0.5s" }}
+            >
+              HTML
+            </p>
+          </div>
+
+          <div
+            className={`${styles.credentials} ${styles.cover}`}
+            style={{ backgroundColor: color, transition: "0.5s" }}
+          >
+            <FaCss3Alt
+              style={{ backgroundColor: color, transition: "0.5s" }}
+              className={`${styles.individual_icon} ${styles.cover}`}
+            />
+            <p
+              className={`${styles.individual_icon} ${styles.cover}`}
+              style={{ backgroundColor: color, transition: "0.5s" }}
+            >
+              CSS
+            </p>
+          </div>
+        </Grid>
+      </Grid>
     </>
   );
 };
